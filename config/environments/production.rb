@@ -80,12 +80,12 @@ Rails.application.configure do
  ####################
 
   config.action_mailer.delivery_method = :smtp
-  host = 'safe-plains-31010.herokuapp.com'
+  host = 'localhost:3000'
   config.action_mailer.default_url_options = { host: host }
   config.action_mailer.smtp_settings = {
    :address              => 'smtp.gmail.com',
-   :port                 => '587',
-   :domain               => 'heroku.com',
+   :port                 => 587,
+   :domain               => 'mail.google.com',
    :user_name            => 'dodaihoc.abvk@gmail.com',
    :password             => '01646236194',
    :authentication       => 'plain',
