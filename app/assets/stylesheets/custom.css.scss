@@ -251,11 +251,13 @@ input {
   }
   .content {
     display: block;
-    margin-left: 60px;
+    margin-left: 55px;
+    padding: 5px;
     img {
       display: block;
       padding: 5px 0;
     }
+    border: #ADD8E6 solid 1px;
   }
   .timestamp {
     color: $gray-light;
@@ -267,6 +269,13 @@ input {
     margin-right: 10px;
     margin-top: 5px;
   }
+  .title{
+    display: block;
+    margin-left:60px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
 }
 
 aside {
