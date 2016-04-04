@@ -30,6 +30,3 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
-
-# users.each { |user| user.comments.create!(content: "comment", micropost_id: user.microposts.first.id, user_id: user)}
-

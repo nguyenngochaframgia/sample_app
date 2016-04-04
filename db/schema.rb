@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402111719) do
+ActiveRecord::Schema.define(version: 20160404062852) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -26,12 +26,14 @@ ActiveRecord::Schema.define(version: 20160402111719) do
 
   create_table "entries", force: :cascade do |t|
     t.text     "content"
-    t.integer  "user_id"
     t.string   "title"
     t.string   "picture"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "entries", ["user_id"], name: "index_entries_on_user_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"

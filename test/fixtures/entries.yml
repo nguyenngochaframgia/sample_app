@@ -2,12 +2,12 @@
 
 one:
   content: MyText
-  user_id: 1
   title: MyString
   picture: MyString
+  user_id: 
 
 two:
   content: MyText
-  user_id: 1
   title: MyString
   picture: MyString
+  user_id: 
