@@ -3,7 +3,6 @@ class EntriesController < ApplicationController
   before_action :correct_user,   only: :destroy
   def create
     @entry = current_user.entries.build(entry_params)
-    byebug
     if @entry.save
       flash[:success] = "Entry created!"
       redirect_to root_url
