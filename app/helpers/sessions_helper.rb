@@ -15,6 +15,14 @@ module SessionsHelper
 	    end
 	end
 
+	def comment_user? entry
+		entry.user == current_user || current_user.following?(entry.user)
+	end
+
+	def delete_comment_user? comment
+		comment.user == current_user || comment.entry.user == current_user
+	end
+
 	def logged_in?
 		!current_user.nil?
 	end

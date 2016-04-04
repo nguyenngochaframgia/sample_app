@@ -1,0 +1,12 @@
+<li id="comment">
+	<% if !comment.user.nil? %>
+	<%= link_to gravatar_for(comment.user, size: 30), comment.user %>
+	<% end %>
+	<span><%= comment.content %></span>
+	<% if (logged_in? && (delete_comment_user? comment)) %>
+	<div class="right">
+		<%= link_to "delete", [@entry, comment], method: :delete, data: { confirm: "you sure?" } %>
+	</div>
+	<% end %>
+</li>
+

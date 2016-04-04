@@ -21,7 +21,7 @@ end
 users = User.order(:created_at).take(6)
 50.times do
   content = Faker::Lorem.sentence(5)
-  users.each { |user| user.microposts.create!(content: content) }
+  users.each { |user| user.entries.create!(title: "title", content: content) }
 end
 
 users = User.all
@@ -30,3 +30,6 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+# users.each { |user| user.comments.create!(content: "comment", micropost_id: user.microposts.first.id, user_id: user)}
+

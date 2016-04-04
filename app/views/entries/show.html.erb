@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="entries">
+	<%= link_to gravatar_for(@entry.user, size: 50), @entry.user %>	
+	<span class="user"><%= link_to @entry.user.name, @entry.user %></span>
+	<span class="title"><strong><%= @entry.title if @entry.title?%></strong></span>
+	<span class="content"><%= @entry.content %></span>
+	<span class="timestamp">Posted <%= time_ago_in_words(@entry.created_at) %> ago.</span> 
+	<span class="extra">
+	<% if current_user?(@entry.user) %>
+	  <%= link_to "delete", @entry, method: :delete, data: { confirm: "you sure?" } %>
+	<% end %>
+	</span>
+  </div>
+	<h3>Comments (<%= @entry.comments.count %>)</h3>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<ol class="entries">
+			  <%= render @comments %>
+			</ol>
+			<% if logged_in? && (comment_user? @entry) %>
+				<%= render 'shared/comment_form', entry: @entry, comment: @new_comment %>
+			<% end %>
+		</div>	
+	</div>
+</div>
+
+
