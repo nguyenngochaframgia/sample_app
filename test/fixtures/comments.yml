@@ -2,10 +2,10 @@
 
 one:
   content: MyText
-  micropost_id: 
+  entry_id: 
   user_id: 
 
 two:
   content: MyText
-  micropost_id: 
+  entry_id: 
   user_id: 
